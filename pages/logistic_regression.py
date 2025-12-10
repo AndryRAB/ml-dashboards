@@ -29,7 +29,7 @@ def show():
     if data_source == "Generate Synthetic Data":
         # Parameters for synthetic data
         n_samples = st.sidebar.slider("Number of samples", 50, 1000, 300, 50)
-        n_features = st.sidebar.radio("Number of features:", [2], index=0)
+        n_features = 2  # Fixed at 2 for 2D visualization
         class_separation = st.sidebar.slider("Class separation", 0.5, 3.0, 1.5, 0.1)
         
         # Generate synthetic data
@@ -226,7 +226,7 @@ def show():
             ax.set_xlabel('Predicted')
             ax.set_title('Test Set Confusion Matrix')
             st.pyplot(fig_cm_test)
-            plt.close()
+            plt.close(fig_cm_test)
         
         # Classification report
         st.subheader("Classification Report (Test Set)")
